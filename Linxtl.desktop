@@ -1,0 +1,10 @@
+[Desktop Entry]
+        Name=Linxtl
+        Comment=Crystallographic toolbox for Linux
+Exec=/home/denis/Dropbox/linxtlphonex/linxtl/linxtl.py
+TryExec=/home/denis/Dropbox/linxtlphonex/linxtl/linxtl.py
+Icon=/home/denis/Dropbox/linxtlphonex/linxtl/icon/main.ico
+StartupNotify=false
+        Terminal=false
+        Type=Application
+        Categories=GNOME;GTK;Education;Chemistry;

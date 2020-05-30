@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/ch5m3d.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<script type="text/javascript" src="js/ch5m3d.full.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+<title></title>
+</head>
+<body  onload = "loadme()">
+<table>
+  <tr><td class="view">
+  <canvas id="molcanvas" width="800" height="800" moz-opaque></canvas>
+</td>
+    <td class="controls">
+<p>
+  <input type='button' onclick="viewmode()" value="View Mode" class="btn btn-primary"  id="modeView" />
+  <input type='button' onclick="drawmode()" value="Draw Mode" class="btn btn-primary"  id="modeDraw" />
+</p>
+
+<div id="viewDiv">
+  <p><strong>View Mode</strong></p>
+  <div id="formula"><p>Formula = </p></div>
+  <p><input type='button' onclick="showCoord(0)" value="Show coordinates"  class="btn btn-primary"  id="coord" /></p>
+  <p>
+    <input type='button' class="btn btn-primary" id="LabelButton" onclick="showLabels()" value="Labels" />
+    </p>
+  <p>
+    <input class="btn btn-primary" type='button' onclick="hideH()" value="Hide H" />
+    <input class="btn btn-primary" type='button' onclick="resetView()" value="Reset View" />
+    </p>
+  <!-- <p><input type='button' onclick="showGlobal()" value="Show parameters" /></p> -->
+  <p>
+    <input type='button' class="btn btn-primary" id="rotateX" onclick="RotateMolecule('x')" value="Rotate X" />
+    <input type='button' class="btn btn-primary" id="rotateY" onclick="RotateMolecule('y')" value="Rotate Y" />
+    <input type='button' class="btn btn-primary" id="rotateZ" onclick="RotateMolecule('z')" value="Rotate Z" />
+    </p>
+  <p class="fleft"><strong>Load file:</strong><br />
+    <input type="file" id="molfile"
+           title="Browse to load a file located on your computer." />
+    </p>
+
+  </div>
+
+  <!-- <script>$(document).on("keydown", function (e) { if (e.keyCode == 70 && e.ctrlKey) {$(".adv-accordian-text").show()} });</script> -->
+<div id="drawDiv">
+  <p><strong>Current Element:</strong></p>
+  <div id="ptable"></div>
+
+  <p><strong>Hybridization:</strong></p>
+  <p> &nbsp; &nbsp;
+    <input type='button' class="btn btn-primary" id="cld1" onclick="pickClouds('1')" value="s"   />
+    <input type='button' class="btn btn-primary" id="cld2" onclick="pickClouds('2')" value="sp"  />
+    <input type='button' class="btn btn-primary" id="cld3" onclick="pickClouds('3')" value="sp2" />
+    <input type='button' class="btn btn-primary" id="cld4" onclick="pickClouds('4')" value="sp3" />
+    </p>
+  <p>
+    <input type='button' class="btn btn-primary" id="delbtn"  onclick="pickElem('Delete')" value="Delete Atom" />
+    <input type='button' class="btn btn-primary" id="delbond" onclick="pickElem('DelBond')" value="Delete Bond" />
+    </p>
+  <p>
+    <input type='button' class="btn btn-primary" id="rotbond" onclick="pickElem('RotateBond')" value="Rotate Bond" />
+    <input type='button' class="btn btn-primary" id="undo"    onclick="Undo('pop')" value="Undo" />
+    <input type='button' class="btn btn-primary" id="redo"    onclick="Undo('redo')" value="Redo" />
+    </p>
+  <p>
+    <input type='button' class="btn btn-primary" id="OptButton" onclick="mechanics()" value="Optimize Structure" />
+    </p>
+  </div>
+  <p><strong>Information</strong></br><textarea id="information" rows="22" cols="45"></textarea></p>
+    </td>
+</tr>
+  </table>
+<p class="clear">&nbsp;</p>
+
+<div id="bondMatrix" class="bondMatrix"></div>
+
+
+
+<script>
+
+  function loadme(){
+
+       //  document.getElementById("rotateX").click();
+       //$("#molfile").val('/home/denis/Dropbox/linxtl/3dmolpy/simple.cif');
+       //document.getElementById("rotateY").click();
+       initwebview(thefile["ext"], thefile["data"]);
+       showLabels();
+       //initialize()
+      //  RotateMolecule("x");
+      //  RotateMolecule("y");
+       //document.getElementById("molfile").click();
+}
+</script>
+
+</body>
+</html>

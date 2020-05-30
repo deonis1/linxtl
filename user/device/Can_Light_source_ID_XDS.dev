@@ -1,0 +1,15 @@
+_diffrn_radiation_type            'synchrotron'
+_diffrn_measurement_method       '\k and \w scans'
+_diffrn_measurement_device_type   'Rayonix MX300 CCD'
+_diffrn_source                    'synchrotron'  
+_diffrn_radiation_source          'Undulator' 
+_diffrn_standards_number          .
+_diffrn_standards_interval_count  .
+_diffrn_standards_interval_time   .
+_diffrn_radiation_monochromator   'Silicon 111'
+_computing_data_collection        'MxDC, (Fodje, 2012)'
+_computing_cell_refinement        'XDS (Kabsch, 2010)'
+_computing_data_reduction         'XDS (Kabsch, 2010)'  
+_computing_structure_solution     'SHELXL2013 (Sheldrick, 2013)'
+_computing_structure_refinement   'SHELXL2013 (Sheldrick, 2013)'
+_computing_molecular_graphics     'ShelXle (Hubschle, 2011)' 
